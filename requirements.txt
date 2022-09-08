@@ -1,4 +1,5 @@
 alembic
+pytest
 python-dotenv
 sqlalchemy
 sqlalchemy_mixins
