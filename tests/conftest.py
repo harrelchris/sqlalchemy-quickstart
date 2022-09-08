@@ -3,9 +3,8 @@ import os
 import pytest
 from sqlalchemy import Boolean, Column, Float, Integer, String
 
-os.environ.setdefault('DATABASE_URL', "sqlite:///:memory:")
-
-from app.database import Base
+os.environ.setdefault("DATABASE_URL", "sqlite:///:memory:")
+from app.database import Base  # isort:skip
 
 
 class Thing(Base):
