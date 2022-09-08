@@ -1,6 +1,11 @@
 [flake8]
 count = True
 exclude = .git,.idea,.venv,__pycache__,build,dist
+extend-ignore =
+    # E402 module level import not at top of file
+    E402,
+    # T201 print found
+    T201
 max-complexity = 10
 max-line-length = 120
 statistics = True
