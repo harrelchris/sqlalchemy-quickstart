@@ -1,11 +1,10 @@
+import os
 from sqlalchemy import create_engine, func, Column, Integer, DateTime, MetaData
 from sqlalchemy.ext.declarative import declared_attr
 from sqlalchemy.orm import declarative_base, scoped_session, sessionmaker
 from sqlalchemy_mixins import AllFeaturesMixin
 
-from .settings import DATABASE_URL
-
-engine = create_engine(DATABASE_URL, echo=False)
+engine = create_engine(os.environ['DATABASE_URL'], echo=False)
 session = scoped_session(sessionmaker(bind=engine, autocommit=True))
 metadata = MetaData()
 
