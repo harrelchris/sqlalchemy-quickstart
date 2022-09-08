@@ -1,5 +1,9 @@
 import time
 
+import dotenv
+
+dotenv.load_dotenv('../.env')
+
 from app.models import Item
 
 # Create
