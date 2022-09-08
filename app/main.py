@@ -2,16 +2,19 @@ import time
 
 import dotenv
 
-dotenv.load_dotenv('../.env')
+# autopep8: off
+dotenv.load_dotenv("../.env")
 
-from app.models import Item
+from app.models import Item  # isort:skip
+
+# autopep8: on
 
 # Create
 item = Item(
     boolean=True,
     floating=3.14,
     integer=42,
-    string='item name',
+    string="item name",
 )
 item.save()
 
