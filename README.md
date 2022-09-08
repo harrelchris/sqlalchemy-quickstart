@@ -11,11 +11,20 @@ Starter code for using SQLAlchemy in Python projects.
 
 ## Database Initialization
 
+- Set `DATABASE_URL` environment variable.
+- Models must be discoverable by autogenerate - import the modules into `app.migrations.env`
+
 ```shell
 alembic -c app/migrations/alembic.ini revision --autogenerate
 alembic -c app/migrations/alembic.ini upgrade head
 ```
 
-## Notes
+## Development
 
-- Models must be discoverable by autogenerate - import the modules into `app.migrations.env`
+```shell
+pip install -r requirements.txt
+pre-commit install
+pre-commit run --all-files
+pytest --cov=. --cov-report=html --html=.reports/pytest.html --self-contained-html
+python -m app.main
+```
