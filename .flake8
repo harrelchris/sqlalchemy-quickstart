@@ -1,0 +1,6 @@
+[flake8]
+count = True
+exclude = .git,.idea,.venv,__pycache__,build,dist
+max-complexity = 10
+max-line-length = 120
+statistics = True
