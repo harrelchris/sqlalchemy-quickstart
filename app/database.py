@@ -1,3 +1,24 @@
+"""
+This module contains the SQLAlchemy database connection and a Base model.
+
+The environment should include a variable called `DATABASE_URL` which
+conforms to the SQLAlchemy URL schema as described here:
+https://docs.sqlalchemy.org/en/14/core/engines.html#database-urls
+
+The Base model includes an auto-incrementing primary key column called `id`.
+
+The Base model includes automatic `created` and `modified` columns which will
+record when records are created and modified per the database server time.
+
+The Base model includes all features from sqlalchemy_mixins.AllFeaturesMixin
+as documented here: https://github.com/absent1706/sqlalchemy-mixins.
+
+Example:
+    from sqlalchemy import Column, String
+    from .database import Base
+    class MyMode(Base):
+        name = Column(String(120))
+"""
 import os
 
 from sqlalchemy import Column, DateTime, Integer, MetaData, create_engine, func
