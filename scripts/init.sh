@@ -21,3 +21,8 @@ if [ -f "db.sqlite3" ]; then
 fi
 
 alembic upgrade head
+
+if ! alembic check; then
+    alembic revision --autogenerate -m "Autogenerate"
+    alembic upgrade head
+fi
