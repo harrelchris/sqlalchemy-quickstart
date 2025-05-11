@@ -1,7 +1,7 @@
 from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-from app.database import engine, Address, User
+from app.database import Address, User, engine
 
 # Create
 with Session(engine) as session:
